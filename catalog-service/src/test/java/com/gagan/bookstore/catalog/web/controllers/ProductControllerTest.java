@@ -16,7 +16,7 @@ import org.springframework.test.context.jdbc.Sql;
 public class ProductControllerTest extends AbstractIntegrationTest {
 
     @Test
-    public void shouldReturnProducts(){
+    public void shouldReturnProducts() {
         given().contentType(ContentType.JSON)
                 .when()
                 .get("/api/products")

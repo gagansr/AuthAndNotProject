@@ -16,12 +16,15 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping
-    public PagedResult<Product> getAllProducts(@RequestParam(name = "page", defaultValue = "1") int pageNo){
+    public PagedResult<Product> getAllProducts(@RequestParam(name = "page", defaultValue = "1") int pageNo) {
         return productService.getAllProducts(pageNo);
     }
 
     @GetMapping("/{code}")
     public ResponseEntity<Product> getProductByCode(@PathVariable String code) throws ProductNotFoundException {
-        return productService.getProductByCode(code).map(ResponseEntity::ok).orElseThrow(() -> ProductNotFoundException.forCode(code));
+        return productService
+                .getProductByCode(code)
+                .map(ResponseEntity::ok)
+                .orElseThrow(() -> ProductNotFoundException.forCode(code));
     }
 }
