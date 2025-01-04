@@ -1,7 +1,7 @@
 name: 'auth-and-notification-project'
 services:
   catalog-service:
-    image: gagansharma/bookstore-catalog-service
+    image: gagansh19/bookstore-catalog-service
     container_name: catalog-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
