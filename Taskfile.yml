@@ -55,8 +55,9 @@ tasks:
       - "docker compose -f {{.MONITORING_DC_FILE}} rm -f"
 
   restart_monitoring:
-    cmds:
-      - task: stop_monitoring
+    cmds:gagansharma/bookstore-catalog-service:latest
+    
+    - task: stop_monitoring
       - task: sleep
       - task: start_monitoring
 
